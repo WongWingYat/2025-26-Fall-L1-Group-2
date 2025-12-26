@@ -302,8 +302,6 @@ void resetAlert() {
   lcd.clear();
   lcd.print(F("Monitoring..."));
 }
-
-// 重載的 sendNotification 函數
 void sendNotification(const __FlashStringHelper* message) {
   Serial.println(message);
   if (bluetoothConnected) {
@@ -341,8 +339,6 @@ void sendTestNotification() {
     sendNotification(F("Accel: OK"));
   }
 }
-
-// 重寫的 sendSystemStatus 函數
 void sendSystemStatus() {
   if (systemStatus == 2) {
     if (alertType == 1) sendNotification(F("ST:Alert-Fall"));
